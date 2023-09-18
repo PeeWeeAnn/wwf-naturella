@@ -1,0 +1,23 @@
+@import "../_variables/variables";
+
+.footer {
+    width: 100%;
+    background: $background-green;
+
+    &__logo {
+        fill: $background-white;
+    }
+
+    &__title {
+        color: $text-white;
+        font-weight: 400;
+    }
+}
+
+.footer-wrapper {
+    width: 100%;
+    height: 89px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
