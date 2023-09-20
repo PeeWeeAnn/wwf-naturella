@@ -1,0 +1,28 @@
+@import "../_variables/variables";
+
+.project-implementation {
+    background: $background-green;
+    padding: 50px 0;
+
+    &__text {
+        width: 50%;
+        color: $text-white;
+        font-size: 24px;
+        font-weight: 500;
+    }
+}
+
+.project-implementation-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-implementation-image {
+    background-image: url("../../src/img/test-result/background-project-implementation.svg");
+    background-repeat: no-repeat;
+
+    img {
+        padding: 0 0 0 27px;
+    }
+}

@@ -1,0 +1,48 @@
+@import "../_variables/variables";
+
+.project {
+    background: $background-white;
+    padding: 50px 0;
+}
+
+.project-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-description {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &__header {
+        color: $text-green;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 130%;
+    }
+
+    &__text {
+        color: $text-grey;
+        font-size: 18px;
+        line-height: 150%;
+    }
+}
+
+.project-image {
+    position: relative;
+    &__main {
+        background-image: url("../../src/img/test-result/background-project.svg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        padding: 15px 0 0 0;
+    }
+
+    &__additional {
+        position: absolute;
+        left: -30px;
+        top: 200px;
+    }
+}
