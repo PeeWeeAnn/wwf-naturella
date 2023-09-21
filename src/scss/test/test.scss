@@ -1,0 +1,137 @@
+@import "../_variables/variables";
+
+.test {
+    padding: 90px 0 0 0;
+    flex: 1 1 auto;
+
+    &__image-left {
+    }
+
+    &__image-right {
+    }
+}
+
+.test-wrapper {
+    display: flex;
+}
+
+.test-question {
+    display: flex;
+    padding: 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    border-radius: 40px;
+    background: $background-white;
+
+    &__answer {
+        display: none;
+        color: $text-grey;
+        font-size: 19px;
+        font-weight: 500;
+        line-height: 150%;
+    }
+
+    &__link {
+        color: $text-light-green;
+        font-size: 19px;
+        font-weight: 500;
+        line-height: 150%;
+        text-decoration-line: underline;
+    }
+}
+
+.test-question-information {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &__number {
+        color: $text-light-green;
+        font-size: 40px;
+        font-weight: 800;
+        line-height: normal;
+        letter-spacing: 2px;
+    }
+
+    &__number span {
+        color: $text-green;
+        font-size: 40px;
+        font-weight: 800;
+        line-height: normal;
+        letter-spacing: 2px;
+    }
+
+    &__question {
+        color: $text-grey;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: normal;
+    }
+}
+
+.test-question-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+
+    &__answer {
+        display: flex;
+        gap: 20px;
+    }
+
+    &__next {
+    }
+}
+
+.button {
+    &__true {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: calc(50% - 10px);
+        height: 60px;
+        padding: 10px;
+        border-radius: 20px;
+        border: 2px solid $text-green;
+        background: transparent;
+        color: $text-green;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 150%;
+        text-transform: uppercase;
+        -webkit-transition: 0.3s ease;
+        -moz-transition: 0.3s ease;
+        -o-transition: 0.3s ease;
+    }
+
+    &__true:hover {
+    }
+
+    &__false {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: calc(50% - 10px);
+        height: 60px;
+        padding: 10px;
+        border-radius: 20px;
+        border: 2px solid $text-green;
+        background: transparent;
+        color: $text-green;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 150%;
+        text-transform: uppercase;
+        -webkit-transition: 0.3s ease;
+        -moz-transition: 0.3s ease;
+        -o-transition: 0.3s ease;
+    }
+
+    &__false:hover {
+    }
+
+    &__next {
+    }
+}

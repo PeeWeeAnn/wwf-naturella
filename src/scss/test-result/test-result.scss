@@ -1,0 +1,172 @@
+@import "../_variables/variables";
+
+.test-result {
+    padding: 70px 0;
+    height: 480px;
+
+    @include _768 {
+        height: 530px;
+    }
+
+    @include _480 {
+        padding: 30px 0 150px;
+    }
+
+    &__image {
+        position: absolute;
+        top: 120px;
+        right: 76%;
+
+        @include _1600 {
+            right: 78%;
+        }
+
+        @include _1440 {
+            right: 71%;
+        }
+
+        @include _1000 {
+            width: 270px;
+            right: 64%;
+            top: 140px;
+        }
+
+        @include _768 {
+            width: 200px;
+            right: 0;
+            top: 350px;
+        }
+
+        @include _480 {
+            top: 450px;
+        }
+    }
+}
+
+.test-result-wrapper {
+    display: flex;
+    justify-content: end;
+    position: relative;
+    height: 430px;
+
+    @include _768 {
+        justify-content: center;
+    }
+
+    @include _480 {
+        height: 530px;
+    }
+}
+
+.test-result-description {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    padding: 0 55px 20px 55px;
+    background-image: url("../../src/img/test-result/background-test-result.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    @include _1600 {
+        width: 71%;
+    }
+
+    @include _1440 {
+        background-image: url("../../src/img/test-result/background-test-result-1000.svg");
+        width: 64%;
+    }
+
+    @include _1000 {
+        background-image: url("../../src/img/test-result/background-test-result-768.svg");
+        width: 55%;
+    }
+
+    @include _768 {
+        background-image: url("../../src/img/test-result/background-test-result-480.svg");
+        width: 60%;
+    }
+
+    @include _576 {
+        width: 100%;
+    }
+
+    /*     @include _480 {
+        background-size: 100%;
+        padding: 0 40px;
+    } */
+
+    @include _480 {
+        background-image: url("../../src/img/test-result/background-test-result-360.svg");
+        background-size: 100% 100%;
+        width: 100%;
+        padding: 0 60px;
+    }
+
+    @include _400 {
+        padding: 0 40px;
+    }
+
+    &__text {
+        color: $text-grey;
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 222px;
+        height: 40px;
+        padding: 10px;
+        border-radius: 20px;
+        background: $background-green;
+        color: $text-white;
+        text-decoration: none;
+        -webkit-transition: 0.3s ease;
+        -moz-transition: 0.3s ease;
+        -o-transition: 0.3s ease;
+
+        @include _480 {
+            width: calc(100% - 20px);
+        }
+    }
+
+    &__button:hover {
+        background: $background-light-green-2;
+        transition: 0.3s ease;
+    }
+}
+
+.test-result-description-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    &__additional {
+        color: $text-light-green;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: normal;
+        text-transform: uppercase;
+
+        @include _768 {
+            font-size: 20px;
+        }
+
+        @include _576 {
+            font-size: 18px;
+        }
+    }
+
+    &__main {
+        color: $text-green;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: normal;
+
+        @include _576 {
+            font-size: 32px;
+        }
+    }
+}

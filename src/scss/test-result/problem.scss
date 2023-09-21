@@ -10,6 +10,15 @@
         font-size: 50px;
         font-weight: 700;
         line-height: 110%;
+
+        @include _1000 {
+            width: 100%;
+        }
+
+        @include _768 {
+            width: 90%;
+            font-size: 40px;
+        }
     }
 
     &__header span {
@@ -26,6 +35,14 @@
         gap: 30px;
         border-radius: 40px;
         background: $background-white;
+
+        @include _1000 {
+            width: calc(100% - 60px);
+        }
+
+        @include _768 {
+            width: calc(90% - 60px);
+        }
     }
 
     &__text {
@@ -38,4 +55,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include _1000 {
+        flex-direction: column;
+        gap: 40px;
+    }
 }

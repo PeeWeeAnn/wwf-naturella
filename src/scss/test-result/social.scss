@@ -10,6 +10,10 @@
         font-size: 32px;
         font-weight: 700;
         line-height: normal;
+
+        @include _768 {
+            width: 90%;
+        }
     }
 }
 
@@ -24,4 +28,10 @@
 .social-list {
     display: flex;
     gap: 20px;
+
+    &__image {
+        @include _480 {
+            width: 40px;
+        }
+    }
 }

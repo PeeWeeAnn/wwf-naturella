@@ -9,6 +9,10 @@
         color: $text-grey;
         font-size: 18px;
         font-weight: 500;
+
+        @include _1000 {
+            width: 85%;
+        }
     }
 
     &__header {
@@ -17,6 +21,10 @@
         color: $text-grey;
         font-size: 24px;
         font-weight: 700;
+
+        @include _1000 {
+            width: 85%;
+        }
     }
 
     &__header span {
