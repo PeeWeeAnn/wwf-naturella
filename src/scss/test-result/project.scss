@@ -107,9 +107,14 @@
     }
 
     &__sponsors {
-        position: absolute;
-        left: -30px;
-        bottom: -100px;
+        display: none;
+
+        @include _768 {
+            display: flex;
+            position: absolute;
+            left: -30px;
+            bottom: -100px;
+        }
 
         @include _480 {
             left: -20px;

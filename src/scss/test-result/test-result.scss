@@ -92,11 +92,6 @@
         width: 100%;
     }
 
-    /*     @include _480 {
-        background-size: 100%;
-        padding: 0 40px;
-    } */
-
     @include _480 {
         background-image: url("../../src/img/test-result/background-test-result-360.svg");
         background-size: 100% 100%;

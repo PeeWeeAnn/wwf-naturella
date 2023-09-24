@@ -29,6 +29,7 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
+    "i18next": "^23.5.1",
     "normalize.css": "^8.0.1"
   }
 }

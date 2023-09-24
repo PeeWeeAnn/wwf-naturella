@@ -1,21 +1,86 @@
 @import "../_variables/variables";
 
+.question-section {
+    display: none;
+}
+
 .test {
-    padding: 90px 0 0 0;
+    padding: 90px 0;
     flex: 1 1 auto;
 
+    @include _768 {
+        padding: 70px 0;
+    }
+
     &__image-left {
+        position: relative;
+        left: 5px;
+
+        @include _1440 {
+            width: 380px;
+        }
+
+        @include _1000 {
+            width: 300px;
+        }
+
+        @include _768 {
+            width: 430px;
+            left: 0;
+        }
+
+        @include _576 {
+            width: 330px;
+        }
     }
 
     &__image-right {
+        position: relative;
+        right: 15px;
+
+        @include _1440 {
+            width: 380px;
+        }
+
+        @include _1000 {
+            width: 300px;
+        }
+
+        @include _768 {
+            width: 430px;
+            right: 0;
+        }
+
+        @include _576 {
+            width: 330px;
+        }
     }
 }
 
 .test-wrapper {
     display: flex;
+    position: relative;
+
+    @include _768 {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 40px;
+    }
+
+    &--right {
+        display: flex;
+        position: relative;
+
+        @include _768 {
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+    }
 }
 
 .test-question {
+    height: 100%;
     display: flex;
     padding: 30px;
     flex-direction: column;
@@ -30,6 +95,10 @@
         font-size: 19px;
         font-weight: 500;
         line-height: 150%;
+
+        @include _1440 {
+            font-size: 16px;
+        }
     }
 
     &__link {
@@ -38,6 +107,10 @@
         font-weight: 500;
         line-height: 150%;
         text-decoration-line: underline;
+
+        @include _1440 {
+            font-size: 16px;
+        }
     }
 }
 
@@ -76,12 +149,25 @@
     gap: 30px;
     width: 100%;
 
-    &__answer {
-        display: flex;
+    @include _1440 {
         gap: 20px;
     }
 
+    &__answer {
+        display: flex;
+        gap: 20px;
+
+        @include _480 {
+            flex-direction: column;
+        }
+    }
+
     &__next {
+        display: none;
+    }
+
+    &__link {
+        text-decoration: none;
     }
 }
 
@@ -104,9 +190,22 @@
         -webkit-transition: 0.3s ease;
         -moz-transition: 0.3s ease;
         -o-transition: 0.3s ease;
+
+        @include _480 {
+            width: 100%;
+        }
+
+        &-icon {
+            display: none;
+            margin: 0 5px 0 0;
+        }
     }
 
     &__true:hover {
+        background: $background-light-green-2;
+        color: $text-white;
+        border: 2px solid $text-light-green;
+        transition: 0.3s ease;
     }
 
     &__false {
@@ -127,11 +226,115 @@
         -webkit-transition: 0.3s ease;
         -moz-transition: 0.3s ease;
         -o-transition: 0.3s ease;
+
+        @include _480 {
+            width: 100%;
+        }
+
+        &-icon {
+            display: none;
+            margin: 0 5px 0 0;
+        }
     }
 
     &__false:hover {
+        background: $background-green;
+        color: $text-white;
+        transition: 0.3s ease;
     }
 
     &__next {
+        display: flex;
+        width: 100%;
+        height: 76px;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        background: $background-green;
+        color: $text-white;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 150%;
+        text-transform: uppercase;
+        -webkit-transition: 0.3s ease;
+        -moz-transition: 0.3s ease;
+        -o-transition: 0.3s ease;
+    }
+
+    &__next:hover {
+        background: $background-light-green-2;
+        color: $text-white;
+        transition: 0.3s ease;
     }
 }
+
+.true-active {
+    background: $true;
+    border: 2px solid $true;
+}
+
+.true-active:hover {
+    background: $true;
+    border: 2px solid $true;
+    color: $text-green;
+}
+
+.false-active {
+    background: $false;
+    border: 2px solid $false;
+}
+
+.false-active:hover {
+    background: $false;
+    border: 2px solid $false;
+    color: $text-green;
+}
+
+.disable {
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+/* .question {
+    &-1 {
+        display: block;
+    }
+
+    &-2 {
+        display: none;
+    }
+
+    &-3 {
+        display: none;
+    }
+
+    &-4 {
+        display: none;
+    }
+
+    &-5 {
+        display: none;
+    }
+
+    &-6 {
+        display: none;
+    }
+
+    &-7 {
+        display: none;
+    }
+
+    &-8 {
+        display: none;
+    }
+
+    &-9 {
+        display: none;
+    }
+
+    &-10 {
+        display: none;
+    }
+}
+ */
