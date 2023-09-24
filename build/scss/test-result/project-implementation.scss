@@ -1,0 +1,57 @@
+@import "../_variables/variables";
+
+.project-implementation {
+    background: $background-green;
+    padding: 50px 0;
+
+    &__text {
+        width: 50%;
+        color: $text-white;
+        font-size: 24px;
+        font-weight: 500;
+
+        @include _1440 {
+            font-size: 18px;
+        }
+
+        @include _768 {
+            width: 90%;
+        }
+    }
+}
+
+.project-implementation-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include _768 {
+        flex-direction: column-reverse;
+        gap: 55px;
+    }
+}
+
+.project-implementation-image {
+    background-image: url("../../src/img/test-result/background-project-implementation.svg");
+    background-repeat: no-repeat;
+
+    @include _1000 {
+        background-size: 95%;
+    }
+
+    @include _768 {
+        background-size: 92%;
+    }
+
+    img {
+        padding: 0 0 0 27px;
+
+        @include _1000 {
+            width: 310px;
+        }
+
+        @include _768 {
+            width: 90%;
+        }
+    }
+}

@@ -1,0 +1,150 @@
+@import "../_variables/variables";
+
+.banner {
+    padding: 50px 0 60px 0;
+    background: $background-white;
+
+    @include _768 {
+        padding: 0;
+    }
+
+    @include _480 {
+        padding: 70px 0;
+    }
+
+    &__block {
+        background-image: url("../../src/img/index/background-banner.svg");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 205px;
+        padding: 25px 25px 30px 37px;
+
+        @include _1440 {
+            padding: 25px 0 30px 37px;
+        }
+
+        @include _1000 {
+            background-image: url("../../src/img/index/background-banner-1000.svg");
+            background-size: 100% 100%;
+            height: 300px;
+        }
+
+        @include _768 {
+            background-image: url("../../src/img/index/background-banner-768.svg");
+            height: 490px;
+            align-items: flex-start;
+            padding: 200px 50px 0 50px;
+        }
+
+        @include _576 {
+            padding: 150px 25px 0 25px;
+        }
+
+        @include _480 {
+            background-image: url("../../src/img/index/background-banner-480.svg");
+            background-size: 100% 100%;
+            padding: 50px 40px 0 50px;
+            height: 350px;
+        }
+
+        @include _400 {
+            padding: 50px 20px 0 20px;
+        }
+    }
+
+    &__image {
+        @include _1000 {
+            display: none;
+        }
+    }
+}
+
+.banner-description {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    position: relative;
+
+    &__text {
+        color: $text-white;
+        line-height: normal;
+
+        @include _1000 {
+            width: 75%;
+        }
+
+        @include _768 {
+            width: 100%;
+        }
+    }
+
+    &__image {
+        display: none;
+
+        @include _1000 {
+            display: block;
+            width: 170px;
+            height: 120px;
+            top: 30px;
+            right: 0;
+            position: absolute;
+        }
+
+        @include _768 {
+            top: -15px;
+            right: -5px;
+        }
+
+        @include _480 {
+            top: -8px;
+            right: 0;
+            width: 124px;
+            height: 89px;
+        }
+
+        @include _400 {
+            right: -10px;
+        }
+    }
+}
+
+.banner-description-heading {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    @include _1600 {
+        gap: 20px;
+    }
+
+    @include _768 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &__heading {
+        color: $text-white;
+        font-size: 28px;
+        font-weight: 600;
+        text-transform: uppercase;
+
+        @include _1600 {
+            font-size: 24px;
+        }
+
+        @include _576 {
+            font-size: 22px;
+        }
+
+        @include _480 {
+            font-size: 18px;
+        }
+    }
+
+    &__heading span {
+        color: $text-light-green;
+    }
+}

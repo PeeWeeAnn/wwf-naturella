@@ -1,0 +1,37 @@
+@import "../_variables/variables";
+
+.social {
+    padding: 105px 0;
+
+    &__header {
+        width: 70%;
+        text-align: center;
+        color: $text-green;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: normal;
+
+        @include _768 {
+            width: 90%;
+        }
+    }
+}
+
+.social-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.social-list {
+    display: flex;
+    gap: 20px;
+
+    &__image {
+        @include _480 {
+            width: 40px;
+        }
+    }
+}

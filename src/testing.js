@@ -22,6 +22,7 @@ buttonsTrue.forEach((buttonTrue, index) => {
 			buttonsFalse[index].classList.remove("disable")
 
 			buttonsNext[index].style.display = "none"
+			buttonsNext[index].style.display = "none"
 
 			testAnswers[index].style.display = "none"
 		} else {
@@ -91,6 +92,7 @@ const testItem = document.querySelectorAll(".question-section")
 let currentSectionIndex = 0
 
 function showNextSection() {
+	window.scrollTo(0, 0)
 	if (currentSectionIndex < testItem.length) {
 		testItem[currentSectionIndex].style.display = "none"
 		currentSectionIndex++
@@ -141,28 +143,74 @@ const sessionStorageScore = sessionStorage.getItem("score")
 
 if (testResults.length && sessionStorageScore) {
 	if (sessionStorageScore <= 3) {
-		testResults[0].style.display = "block"
+		testResults[2].style.display = "block"
 	}
 	if (sessionStorageScore >= 4 && sessionStorageScore <= 6) {
 		testResults[1].style.display = "block"
 	}
 	if (sessionStorageScore >= 7) {
-		testResults[2].style.display = "block"
+		testResults[0].style.display = "block"
+	}
+	const currentLang = localStorage.getItem("lang")
+	let sentence = ""
+	let kkSentenceFirst = ""
+	let kkSentenceSecond = ""
+
+	if (currentLang === "ru") {
+		if (sessionStorageScore == 1) {
+			sentence = "правильный ответ из 10"
+		} else if (sessionStorageScore >= 2 && sessionStorageScore <= 4) {
+			sentence = "правильных ответа из 10"
+		} else if (sessionStorageScore >= 5) {
+			sentence = "правильных ответов из 10"
+		}
+	}
+	if (currentLang === "kk") {
+		switch (sessionStorageScore) {
+			case "1":
+			case "4":
+			case "5":
+			case "8":
+				kkSentenceFirst = "10 жауаптан"
+				kkSentenceSecond = "дұрыс жауап"
+				break
+			case "2":
+			case "3":
+			case "6":
+			case "7":
+			case "10":
+				kkSentenceFirst = "10 жауаптың"
+				kkSentenceSecond = "дұрыс жауабы"
+				break
+			case "9":
+				kkSentenceFirst = "10-нан"
+				kkSentenceSecond = "дұрыс жауап"
+				break
+		}
+	}
+	if (currentLang == "ru") {
+		if (sessionStorageScore == 1) {
+			sentence = "правильный ответ из 10"
+		} else if (sessionStorageScore >= 2 && sessionStorageScore <= 4) {
+			sentence = "правильных ответа из 10"
+		} else if (sessionStorageScore >= 5) {
+			sentence = "правильных ответов из 10"
+		}
 	}
 
-	if (sessionStorageScore === 1) {
-		sentence = "правильный ответ из 10"
-	} else if (sessionStorageScore >= 2 && sessionStorageScore <= 4) {
-		sentence = "правильных ответа из 10"
-	} else if (sessionStorageScore >= 5) {
-		sentence = "правильных ответов из 10"
+	const rightAnswersCount = document.querySelectorAll(
+		".test-result-description-heading__additional",
+	)
+
+	if (rightAnswersCount) {
+		rightAnswersCount.forEach((answer) => {
+			if (currentLang == "ru") {
+				answer.textContent = sessionStorageScore + " " + sentence
+			}
+			if (currentLang == "kk") {
+				answer.textContent =
+					kkSentenceFirst + " " + sessionStorageScore + " " + kkSentenceSecond
+			}
+		})
 	}
 }
-
-const rightAnswersCount = document.querySelectorAll(
-	".test-result-description-heading__additional",
-)
-
-rightAnswersCount.forEach((answer) => {
-	answer.textContent = sessionStorageScore + " " + sentence
-})
