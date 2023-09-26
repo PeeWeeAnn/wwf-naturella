@@ -17,7 +17,7 @@ function changeLanguage() {
 const langPicker = document.querySelector(".header-block__language")
 if (langPicker) {
 	langPicker.addEventListener("click", changeLanguage)
-	langPicker.textContent = langChoice === "ru" ? "РУС" : "ҚАЗ"
+	langPicker.textContent = langChoice === "ru" ? "ҚАЗ" : "РУС"
 }
 
 import i18next from "i18next"
